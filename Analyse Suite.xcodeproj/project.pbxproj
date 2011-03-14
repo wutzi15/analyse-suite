@@ -17,6 +17,7 @@
 		98322252132E2D9900EF98B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98322250132E2D9900EF98B5 /* InfoPlist.strings */; };
 		98322255132E2D9900EF98B5 /* Analyse_SuiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */; };
 		98322257132E2D9900EF98B5 /* Analyse_SuiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */; };
+		98322261132E36E500EF98B5 /* rec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98322260132E36E500EF98B5 /* rec.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,25 +31,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		981406AB132E64E700FF8BF0 /* rec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rec.h; sourceTree = "<group>"; };
 		98322228132E2D9900EF98B5 /* Analyse Suite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Analyse Suite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832222C132E2D9900EF98B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9832222F132E2D9900EF98B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		98322230132E2D9900EF98B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		98322231132E2D9900EF98B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		98322234132E2D9900EF98B5 /* Analyse Suite-Info.plist */ = {isa = PBXFileReference; path = "Analyse Suite-Info.plist"; sourceTree = "<group>"; };
+		98322234132E2D9900EF98B5 /* Analyse Suite-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Analyse Suite-Info.plist"; sourceTree = "<group>"; };
 		98322236132E2D9900EF98B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		98322238132E2D9900EF98B5 /* Analyse Suite-Prefix.pch */ = {isa = PBXFileReference; path = "Analyse Suite-Prefix.pch"; sourceTree = "<group>"; };
+		98322238132E2D9900EF98B5 /* Analyse Suite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Analyse Suite-Prefix.pch"; sourceTree = "<group>"; };
 		98322239132E2D9900EF98B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9832223C132E2D9900EF98B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */ = {isa = PBXFileReference; path = Analyse_SuiteAppDelegate.h; sourceTree = "<group>"; };
-		9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Analyse_SuiteAppDelegate.m; sourceTree = "<group>"; };
+		9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Analyse_SuiteAppDelegate.h; sourceTree = "<group>"; };
+		9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = Analyse_SuiteAppDelegate.m; sourceTree = "<group>"; };
 		98322242132E2D9900EF98B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		98322249132E2D9900EF98B5 /* Analyse SuiteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Analyse SuiteTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9832224F132E2D9900EF98B5 /* Analyse SuiteTests-Info.plist */ = {isa = PBXFileReference; path = "Analyse SuiteTests-Info.plist"; sourceTree = "<group>"; };
+		9832224F132E2D9900EF98B5 /* Analyse SuiteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Analyse SuiteTests-Info.plist"; sourceTree = "<group>"; };
 		98322251132E2D9900EF98B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		98322253132E2D9900EF98B5 /* Analyse SuiteTests-Prefix.pch */ = {isa = PBXFileReference; path = "Analyse SuiteTests-Prefix.pch"; sourceTree = "<group>"; };
+		98322253132E2D9900EF98B5 /* Analyse SuiteTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Analyse SuiteTests-Prefix.pch"; sourceTree = "<group>"; };
 		98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Analyse_SuiteTests.h; sourceTree = "<group>"; };
 		98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Analyse_SuiteTests.m; sourceTree = "<group>"; };
+		98322260132E36E500EF98B5 /* rec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rec.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		98322232132E2D9900EF98B5 /* Analyse Suite */ = {
 			isa = PBXGroup;
 			children = (
+				98322260132E36E500EF98B5 /* rec.cpp */,
+				981406AB132E64E700FF8BF0 /* rec.h */,
 				9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */,
 				9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */,
 				98322241132E2D9900EF98B5 /* MainMenu.xib */,
@@ -153,6 +158,22 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		98322262132E3D3400EF98B5 /* analysesuite */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 98322263132E3D3400EF98B5 /* Build configuration list for PBXLegacyTarget "analysesuite" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			dependencies = (
+			);
+			name = analysesuite;
+			passBuildSettingsInEnvironment = 1;
+			productName = analysesuite;
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		98322227132E2D9900EF98B5 /* Analyse Suite */ = {
@@ -213,6 +234,7 @@
 			targets = (
 				98322227132E2D9900EF98B5 /* Analyse Suite */,
 				98322248132E2D9900EF98B5 /* Analyse SuiteTests */,
+				98322262132E3D3400EF98B5 /* analysesuite */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +284,7 @@
 			files = (
 				9832223A132E2D9900EF98B5 /* main.m in Sources */,
 				98322240132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m in Sources */,
+				98322261132E36E500EF98B5 /* rec.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,14 +377,18 @@
 		9832225B132E2D9900EF98B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
+				LIBRARY_SEARCH_PATHS = "~/bl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -369,14 +396,18 @@
 		9832225C132E2D9900EF98B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
+				LIBRARY_SEARCH_PATHS = "~/bl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -425,6 +456,35 @@
 			};
 			name = Release;
 		};
+		98322264132E3D3400EF98B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "-I/Users/wutzis_spam/Downloads/boost_1_46_0";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		98322265132E3D3400EF98B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				OTHER_CFLAGS = "-I/Users/wutzis_spam/Downloads/boost_1_46_0";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -444,6 +504,7 @@
 				9832225C132E2D9900EF98B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9832225D132E2D9900EF98B5 /* Build configuration list for PBXNativeTarget "Analyse SuiteTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +513,16 @@
 				9832225F132E2D9900EF98B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98322263132E3D3400EF98B5 /* Build configuration list for PBXLegacyTarget "analysesuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98322264132E3D3400EF98B5 /* Debug */,
+				98322265132E3D3400EF98B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
