@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Analyse SuiteTests' target in the 'Analyse SuiteTests' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
