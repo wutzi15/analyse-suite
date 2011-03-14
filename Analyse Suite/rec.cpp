@@ -14,12 +14,13 @@ bool check(std::string a){
   }
 }
 
-int rec(int argc, char *argv){
+int rec(const char *argv){
 	
 	//new code
-	
+	std::ofstream of("tmp.txt");
+	of << argv;
 	std::string _name, _line;
-	std::ifstream _in(_name.c_str());
+	std::ifstream _in("tmp.txt");
 	while (getline(_in,_line)){
 		std::cout << _line << std::endl;
 	

@@ -7,6 +7,7 @@
 //
 
 #import "Analyse_SuiteAppDelegate.h"
+#import "rec.h"
 
 
 @implementation Analyse_SuiteAppDelegate
@@ -24,15 +25,18 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[tx_files registerForDraggedTypes:[NSArray arrayWithObject:NSPasteboardTypeTabularText]];
-	[tx_dir registerForDraggedTypes:[NSArray arrayWithObject:NSPasteboardTypeString]];
+	[tx_files setEnabled:YES];
+	[tx_files setEditable:YES];
+	[tx_files setStringValue:@""];
+	[tx_files registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
+	[tx_dir registerForDraggedTypes:[NSArray arrayWithObject:NSFilenamesPboardType]];
 }
 
 - (IBAction)bt_analyse:(id)sender {
 	if ([ch_rec state] == NSOnState) {
 		
 		const char *arg = [[tx_files stringValue] UTF8String];
-		//rec(0,arg);
+		int ret = rec(arg);
 	}
 }
 
