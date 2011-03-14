@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981406AF132E677200FF8BF0 /* analysator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AC132E677200FF8BF0 /* analysator.cpp */; };
+		981406B0132E677200FF8BF0 /* analyse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AD132E677200FF8BF0 /* analyse.cpp */; };
 		9832222D132E2D9900EF98B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9832222C132E2D9900EF98B5 /* Cocoa.framework */; };
 		98322237132E2D9900EF98B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98322235132E2D9900EF98B5 /* InfoPlist.strings */; };
 		9832223A132E2D9900EF98B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322239132E2D9900EF98B5 /* main.m */; };
@@ -32,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		981406AB132E64E700FF8BF0 /* rec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rec.h; sourceTree = "<group>"; };
+		981406AC132E677200FF8BF0 /* analysator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analysator.cpp; sourceTree = "<group>"; };
+		981406AD132E677200FF8BF0 /* analyse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analyse.cpp; sourceTree = "<group>"; };
+		981406AE132E677200FF8BF0 /* analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analyse.h; sourceTree = "<group>"; };
+		981406B1132E679500FF8BF0 /* head_analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = head_analyse.h; sourceTree = "<group>"; };
 		98322228132E2D9900EF98B5 /* Analyse Suite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Analyse Suite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832222C132E2D9900EF98B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9832222F132E2D9900EF98B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -115,6 +121,10 @@
 		98322232132E2D9900EF98B5 /* Analyse Suite */ = {
 			isa = PBXGroup;
 			children = (
+				981406AC132E677200FF8BF0 /* analysator.cpp */,
+				981406AD132E677200FF8BF0 /* analyse.cpp */,
+				981406B1132E679500FF8BF0 /* head_analyse.h */,
+				981406AE132E677200FF8BF0 /* analyse.h */,
 				98322260132E36E500EF98B5 /* rec.cpp */,
 				981406AB132E64E700FF8BF0 /* rec.h */,
 				9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */,
@@ -285,6 +295,8 @@
 				9832223A132E2D9900EF98B5 /* main.m in Sources */,
 				98322240132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m in Sources */,
 				98322261132E36E500EF98B5 /* rec.cpp in Sources */,
+				981406AF132E677200FF8BF0 /* analysator.cpp in Sources */,
+				981406B0132E677200FF8BF0 /* analyse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +391,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "~/bl/**";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -386,7 +399,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = "~/bl";
+				LIBRARY_SEARCH_PATHS = (
+					"~/bl/",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				WRAPPER_EXTENSION = app;
@@ -399,13 +415,17 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "~/bl/**";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = "~/bl";
+				LIBRARY_SEARCH_PATHS = (
+					"~/bl/",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				WRAPPER_EXTENSION = app;
