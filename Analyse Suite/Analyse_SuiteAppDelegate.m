@@ -8,6 +8,7 @@
 
 #import "Analyse_SuiteAppDelegate.h"
 #import "rec.h"
+#import "head_analyse.h"
 
 
 @implementation Analyse_SuiteAppDelegate
@@ -33,10 +34,17 @@
 }
 
 - (IBAction)bt_analyse:(id)sender {
+	const char *arg = [[tx_files stringValue] UTF8String];
 	if ([ch_rec state] == NSOnState) {
 		
-		const char *arg = [[tx_files stringValue] UTF8String];
+		
 		int ret = rec(arg);
+		if (ret != 0) {
+			NSLog(@"error in rec");
+		}
+	}
+	if ([ch_wl state] == NSOnState) {
+		int ret = _analyse(arg);
 	}
 }
 
