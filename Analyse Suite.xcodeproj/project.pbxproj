@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		981406AF132E677200FF8BF0 /* analysator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AC132E677200FF8BF0 /* analysator.cpp */; };
 		981406B0132E677200FF8BF0 /* analyse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AD132E677200FF8BF0 /* analyse.cpp */; };
+		98140754132E718800FF8BF0 /* collect_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406DE132E718600FF8BF0 /* collect_peak.cpp */; };
 		9832222D132E2D9900EF98B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9832222C132E2D9900EF98B5 /* Cocoa.framework */; };
 		98322237132E2D9900EF98B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98322235132E2D9900EF98B5 /* InfoPlist.strings */; };
 		9832223A132E2D9900EF98B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322239132E2D9900EF98B5 /* main.m */; };
@@ -38,6 +39,8 @@
 		981406AD132E677200FF8BF0 /* analyse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analyse.cpp; sourceTree = "<group>"; };
 		981406AE132E677200FF8BF0 /* analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analyse.h; sourceTree = "<group>"; };
 		981406B1132E679500FF8BF0 /* head_analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = head_analyse.h; sourceTree = "<group>"; };
+		981406DE132E718600FF8BF0 /* collect_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = collect_peak.cpp; path = collect_peaks/collect_peak.cpp; sourceTree = "<group>"; };
+		981407B1132E71B800FF8BF0 /* collect_peak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collect_peak.h; path = collect_peaks/collect_peak.h; sourceTree = "<group>"; };
 		98322228132E2D9900EF98B5 /* Analyse Suite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Analyse Suite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832222C132E2D9900EF98B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9832222F132E2D9900EF98B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 		98322232132E2D9900EF98B5 /* Analyse Suite */ = {
 			isa = PBXGroup;
 			children = (
+				981407B1132E71B800FF8BF0 /* collect_peak.h */,
+				981406DE132E718600FF8BF0 /* collect_peak.cpp */,
 				981406AC132E677200FF8BF0 /* analysator.cpp */,
 				981406AD132E677200FF8BF0 /* analyse.cpp */,
 				981406B1132E679500FF8BF0 /* head_analyse.h */,
@@ -297,6 +302,7 @@
 				98322261132E36E500EF98B5 /* rec.cpp in Sources */,
 				981406AF132E677200FF8BF0 /* analysator.cpp in Sources */,
 				981406B0132E677200FF8BF0 /* analyse.cpp in Sources */,
+				98140754132E718800FF8BF0 /* collect_peak.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "Analyse_SuiteAppDelegate.h"
 #import "rec.h"
 #import "head_analyse.h"
+#import "collect_peak.h"
 
 
 @implementation Analyse_SuiteAppDelegate
@@ -21,6 +22,7 @@
 @synthesize tx_ftp;
 @synthesize tx_dir;
 @synthesize tx_files;
+@synthesize spin;
 
 @synthesize window;
 
@@ -34,6 +36,7 @@
 }
 
 - (IBAction)bt_analyse:(id)sender {
+	[spin startAnimation:self];
 	const char *arg = [[tx_files stringValue] UTF8String];
 	if ([ch_rec state] == NSOnState) {
 		
@@ -45,7 +48,17 @@
 	}
 	if ([ch_wl state] == NSOnState) {
 		int ret = _analyse(arg);
+		if (ret != 0){
+			NSLog(@"error in ana");
+		}
 	}
+	if ([ch_peak state]){
+		int ret = collect_peak(arg);
+		if (ret != 0) {
+			NSLog(@"error in peak");
+		}
+	}
+	[spin stopAnimation:self];
 }
 
 - (IBAction)bt_load_ftp:(id)sender {
