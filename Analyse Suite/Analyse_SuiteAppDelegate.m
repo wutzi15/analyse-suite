@@ -53,10 +53,24 @@
 		}
 	}
 	if ([ch_peak state]){
+		
+		NSTask *task = [[NSTask alloc] init];
+		[task setLaunchPath:@"/bin/sh"];
+		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"dist" ofType:@"sh"], nil]];
+		[task launch];
+		
 		int ret = collect_peak(arg);
 		if (ret != 0) {
 			NSLog(@"error in peak");
 		}
+	}
+	
+	
+	if ([ch_plot state] ==NSOnState) {
+		NSTask *task = [[NSTask alloc] init];
+		[task setLaunchPath:@"/bin/sh"];
+		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"plot" ofType:@"sh"], nil]];
+		[task launch];
 	}
 	[spin stopAnimation:self];
 }

@@ -10,6 +10,8 @@
 		981406AF132E677200FF8BF0 /* analysator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AC132E677200FF8BF0 /* analysator.cpp */; };
 		981406B0132E677200FF8BF0 /* analyse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406AD132E677200FF8BF0 /* analyse.cpp */; };
 		98140754132E718800FF8BF0 /* collect_peak.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981406DE132E718600FF8BF0 /* collect_peak.cpp */; };
+		981407B3132E7A9100FF8BF0 /* dist.sh in Resources */ = {isa = PBXBuildFile; fileRef = 981407B2132E7A9000FF8BF0 /* dist.sh */; };
+		981407B5132E7BC600FF8BF0 /* plot.sh in Resources */ = {isa = PBXBuildFile; fileRef = 981407B4132E7BC600FF8BF0 /* plot.sh */; };
 		9832222D132E2D9900EF98B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9832222C132E2D9900EF98B5 /* Cocoa.framework */; };
 		98322237132E2D9900EF98B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98322235132E2D9900EF98B5 /* InfoPlist.strings */; };
 		9832223A132E2D9900EF98B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322239132E2D9900EF98B5 /* main.m */; };
@@ -41,6 +43,8 @@
 		981406B1132E679500FF8BF0 /* head_analyse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = head_analyse.h; sourceTree = "<group>"; };
 		981406DE132E718600FF8BF0 /* collect_peak.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = collect_peak.cpp; path = collect_peaks/collect_peak.cpp; sourceTree = "<group>"; };
 		981407B1132E71B800FF8BF0 /* collect_peak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collect_peak.h; path = collect_peaks/collect_peak.h; sourceTree = "<group>"; };
+		981407B2132E7A9000FF8BF0 /* dist.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dist.sh; sourceTree = "<group>"; };
+		981407B4132E7BC600FF8BF0 /* plot.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = plot.sh; path = ../plot.sh; sourceTree = "<group>"; };
 		98322228132E2D9900EF98B5 /* Analyse Suite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Analyse Suite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9832222C132E2D9900EF98B5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9832222F132E2D9900EF98B5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -135,6 +139,8 @@
 				9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */,
 				9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */,
 				98322241132E2D9900EF98B5 /* MainMenu.xib */,
+				981407B2132E7A9000FF8BF0 /* dist.sh */,
+				981407B4132E7BC600FF8BF0 /* plot.sh */,
 				98322233132E2D9900EF98B5 /* Supporting Files */,
 			);
 			path = "Analyse Suite";
@@ -262,6 +268,8 @@
 				98322237132E2D9900EF98B5 /* InfoPlist.strings in Resources */,
 				9832223D132E2D9900EF98B5 /* Credits.rtf in Resources */,
 				98322243132E2D9900EF98B5 /* MainMenu.xib in Resources */,
+				981407B3132E7A9100FF8BF0 /* dist.sh in Resources */,
+				981407B5132E7BC600FF8BF0 /* plot.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
