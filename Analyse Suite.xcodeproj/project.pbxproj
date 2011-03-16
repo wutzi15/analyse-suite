@@ -23,6 +23,9 @@
 		98322255132E2D9900EF98B5 /* Analyse_SuiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */; };
 		98322257132E2D9900EF98B5 /* Analyse_SuiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */; };
 		98322261132E36E500EF98B5 /* rec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98322260132E36E500EF98B5 /* rec.cpp */; };
+		98655EAF1330CE9E009675E2 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAD1330CE9E009675E2 /* libboost_filesystem.a */; };
+		98655EB01330CE9E009675E2 /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAE1330CE9E009675E2 /* libboost_system.a */; };
+		98655EB31330DB50009675E2 /* move_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98655EB11330DB50009675E2 /* move_files.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,10 @@
 		98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Analyse_SuiteTests.h; sourceTree = "<group>"; };
 		98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Analyse_SuiteTests.m; sourceTree = "<group>"; };
 		98322260132E36E500EF98B5 /* rec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rec.cpp; sourceTree = "<group>"; };
+		98655EAD1330CE9E009675E2 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_filesystem.a; sourceTree = "<group>"; };
+		98655EAE1330CE9E009675E2 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_system.a; sourceTree = "<group>"; };
+		98655EB11330DB50009675E2 /* move_files.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = move_files.cpp; sourceTree = "<group>"; };
+		98655EB21330DB50009675E2 /* move_files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = move_files.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +80,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9832222D132E2D9900EF98B5 /* Cocoa.framework in Frameworks */,
+				98655EAF1330CE9E009675E2 /* libboost_filesystem.a in Frameworks */,
+				98655EB01330CE9E009675E2 /* libboost_system.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +127,8 @@
 		9832222E132E2D9900EF98B5 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98655EAD1330CE9E009675E2 /* libboost_filesystem.a */,
+				98655EAE1330CE9E009675E2 /* libboost_system.a */,
 				9832222F132E2D9900EF98B5 /* AppKit.framework */,
 				98322230132E2D9900EF98B5 /* CoreData.framework */,
 				98322231132E2D9900EF98B5 /* Foundation.framework */,
@@ -128,14 +139,9 @@
 		98322232132E2D9900EF98B5 /* Analyse Suite */ = {
 			isa = PBXGroup;
 			children = (
-				981407B1132E71B800FF8BF0 /* collect_peak.h */,
-				981406DE132E718600FF8BF0 /* collect_peak.cpp */,
-				981406AC132E677200FF8BF0 /* analysator.cpp */,
-				981406AD132E677200FF8BF0 /* analyse.cpp */,
-				981406B1132E679500FF8BF0 /* head_analyse.h */,
-				981406AE132E677200FF8BF0 /* analyse.h */,
-				98322260132E36E500EF98B5 /* rec.cpp */,
-				981406AB132E64E700FF8BF0 /* rec.h */,
+				98655EB41330DB5A009675E2 /* Analysers */,
+				98655EB11330DB50009675E2 /* move_files.cpp */,
+				98655EB21330DB50009675E2 /* move_files.h */,
 				9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */,
 				9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */,
 				98322241132E2D9900EF98B5 /* MainMenu.xib */,
@@ -176,6 +182,21 @@
 				98322253132E2D9900EF98B5 /* Analyse SuiteTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98655EB41330DB5A009675E2 /* Analysers */ = {
+			isa = PBXGroup;
+			children = (
+				981407B1132E71B800FF8BF0 /* collect_peak.h */,
+				981406DE132E718600FF8BF0 /* collect_peak.cpp */,
+				981406AC132E677200FF8BF0 /* analysator.cpp */,
+				981406AD132E677200FF8BF0 /* analyse.cpp */,
+				981406B1132E679500FF8BF0 /* head_analyse.h */,
+				981406AE132E677200FF8BF0 /* analyse.h */,
+				98322260132E36E500EF98B5 /* rec.cpp */,
+				981406AB132E64E700FF8BF0 /* rec.h */,
+			);
+			name = Analysers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +332,7 @@
 				981406AF132E677200FF8BF0 /* analysator.cpp in Sources */,
 				981406B0132E677200FF8BF0 /* analyse.cpp in Sources */,
 				98140754132E718800FF8BF0 /* collect_peak.cpp in Sources */,
+				98655EB31330DB50009675E2 /* move_files.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +426,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "~/bl/**";
+				FRAMEWORK_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -413,9 +436,11 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"~/bl/",
-					"\"$(SRCROOT)\"",
+				LIBRARY_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
+				OTHER_LDFLAGS = (
+					"-lboost_filesystem",
+					"-L/Users/wutzis_spam/Downloads/boost_1_46_0/stage/lib",
+					"-lboost_system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
@@ -427,18 +452,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "~/bl/**";
+				FRAMEWORK_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"~/bl/",
-					"\"$(SRCROOT)\"",
+				LIBRARY_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
+				OTHER_LDFLAGS = (
+					"-lboost_filesystem",
+					"-L/Users/wutzis_spam/Downloads/boost_1_46_0/stage/lib",
+					"-lboost_system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
@@ -458,6 +486,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse SuiteTests/Analyse SuiteTests-Prefix.pch";
 				INFOPLIST_FILE = "Analyse SuiteTests/Analyse SuiteTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
@@ -480,6 +512,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse SuiteTests/Analyse SuiteTests-Prefix.pch";
 				INFOPLIST_FILE = "Analyse SuiteTests/Analyse SuiteTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,

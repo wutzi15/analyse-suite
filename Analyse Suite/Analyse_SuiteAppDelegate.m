@@ -36,43 +36,49 @@
 }
 
 - (IBAction)bt_analyse:(id)sender {
+		
+	
 	[spin startAnimation:self];
-	const char *arg = [[tx_files stringValue] UTF8String];
-	if ([ch_rec state] == NSOnState) {
-		
-		
-		int ret = rec(arg);
-		if (ret != 0) {
-			NSLog(@"error in rec");
+		const char *arg = [[tx_files stringValue] UTF8String];
+		if ([ch_rec state] == NSOnState) {
+			
+			
+			int ret = rec(arg);
+			if (ret != 0) {
+				NSLog(@"error in rec");
+			}
 		}
-	}
-	if ([ch_wl state] == NSOnState) {
-		int ret = _analyse(arg);
-		if (ret != 0){
-			NSLog(@"error in ana");
+		if ([ch_wl state] == NSOnState) {
+			int ret = _analyse(arg);
+			if (ret != 0){
+				NSLog(@"error in ana");
+			}
 		}
-	}
-	if ([ch_peak state]){
-		
-		NSTask *task = [[NSTask alloc] init];
-		[task setLaunchPath:@"/bin/sh"];
-		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"dist" ofType:@"sh"], nil]];
-		[task launch];
-		
-		int ret = collect_peak(arg);
-		if (ret != 0) {
-			NSLog(@"error in peak");
+		if ([ch_peak state]){
+			
+			NSTask *task = [[NSTask alloc] init];
+			[task setLaunchPath:@"/bin/sh"];
+			[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"dist" ofType:@"sh"], nil]];
+			[task launch];
+			
+			int ret = collect_peak(arg);
+			if (ret != 0) {
+				NSLog(@"error in peak");
+			}
 		}
+		
+		
+		if ([ch_plot state] ==NSOnState) {
+			NSTask *task = [[NSTask alloc] init];
+			[task setLaunchPath:@"/bin/sh"];
+			[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"plot" ofType:@"sh"], nil]];
+			[task launch];
+		}
+	if (!([[tx_dir stringValue] isEqualToString:@""] )) {
+		<#statements#>
 	}
-	
-	
-	if ([ch_plot state] ==NSOnState) {
-		NSTask *task = [[NSTask alloc] init];
-		[task setLaunchPath:@"/bin/sh"];
-		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"plot" ofType:@"sh"], nil]];
-		[task launch];
-	}
-	[spin stopAnimation:self];
+		[spin stopAnimation:self];
+	//}
 }
 
 - (IBAction)bt_load_ftp:(id)sender {

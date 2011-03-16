@@ -8,6 +8,7 @@
 #include <boost/thread.hpp>
 #include <boost/bind.hpp>
 #include <boost/foreach.hpp>
+#include <boost/filesystem.hpp>
 
 //hello world
 int _analyse(const char *argv){
@@ -18,11 +19,20 @@ int _analyse(const char *argv){
 	std::string _peaks = "_peak_" + names;
 	std::string _dist = "_dist_"+names;
 	
-	std::ofstream of("tmp.txt");
-	of << argv << std::endl;
-	std::string _name, _line;
-	std::ifstream _in("tmp.txt");
-	while (getline(_in,_line)){
+	std::stringstream sstr(argv);
+	std::string  _line;
+	
+	while (getline(sstr,_line)){
+		boost::filesystem::path p(_line); 
+		//std::cout << p.string() << std::endl; 
+		std::string file = p.filename().string();
+		std::string path = p.parent_path().string();
+		_of = path+ "/_my_ana_" +file;
+		_only = path+ "/_only_" +file;
+		_peaks = path +"/_peak_" + file;
+		_dist = path + "/_dist_" + file;
+		//std::cout << p.file_string() << std::endl; 
+		//std::cout << p.directory_string() << std::endl; 
 		std::cout << _line << std::endl;
 		analyser analysator; 
 		//get file to read
