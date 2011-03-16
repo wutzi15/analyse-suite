@@ -11,6 +11,7 @@
 #import "head_analyse.h"
 #import "collect_peak.h"
 #import "move_files.h"
+#import <dispatch/dispatch.h>
 
 @implementation Analyse_SuiteAppDelegate
 
@@ -78,13 +79,13 @@
 		}
 	}
 	if ([ch_wl state] == NSOnState) {
-		int ret = _analyse(arg);
-		if (ret != 0){
-			NSLog(@"error in ana");
-		}
+		dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
+		dispatch_sync(queue, ^{
+		 _analyse(arg);
+		});
 	}
 	if ([ch_peak state]){
-		
+		/*
 		NSTask *task = [[NSTask alloc] init];
 		[task setLaunchPath:@"/bin/sh"];
 		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"dist" ofType:@"sh"], nil]];
@@ -93,7 +94,7 @@
 		int ret = collect_peak(arg,[[tx_dir stringValue]UTF8String]);
 		if (ret != 0) {
 			NSLog(@"error in peak");
-		}
+		}*/
 	}
 	if (!([[tx_dir stringValue] isEqualToString:@""] ) && [ch_copy state] == NSOnState) {
 		move_files([[tx_dir stringValue] UTF8String], [[tx_files stringValue] UTF8String]);
@@ -114,11 +115,14 @@
 	
 	if ([ch_plot state] ==NSOnState) {
 		copy_files([[tx_dir stringValue] UTF8String], [[tx_files stringValue] UTF8String]);
+		dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
+		dispatch_sync(queue, ^{
 		NSTask *task = [[NSTask alloc] init];
 		[task setLaunchPath:@"/bin/sh"];
 		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"plot" ofType:@"sh"], nil]];
 		[task launch];
-		[task waitUntilExit];
+			[task waitUntilExit];}
+					  );
 	}
 	
 	
@@ -126,12 +130,15 @@
 }
 
 - (IBAction)bt_load_ftp:(id)sender {
+	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
+	dispatch_sync(queue, ^{
 	[spin startAnimation:self];
 	NSTask *task = [[NSTask alloc] init];
 	[task setLaunchPath:@"/bin/sh"];
 	[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"ftp" ofType:@"sh"],[tx_download stringValue],[tx_ftp stringValue], nil]];
 	[task launch];
-	[spin stopAnimation:self];
+		[spin stopAnimation:self];}
+				  );
 }
 
 - (IBAction)bt_path:(id)sender {

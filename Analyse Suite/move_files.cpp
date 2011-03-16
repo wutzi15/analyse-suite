@@ -24,7 +24,7 @@ void copy_file(const char *t_path,fs::path p ){
 
 void move_file(const char *t_path,fs::path p ){
 	try{
-	fs::rename(p, fs::path(t_path)/p.filename());
+		fs::rename(p, fs::path(t_path)/p.filename());
 	}catch(fs::filesystem_error &e){
 		std::cerr << e.what() << std::endl;
 	}

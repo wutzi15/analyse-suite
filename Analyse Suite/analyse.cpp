@@ -21,7 +21,7 @@ int _analyse(const char *argv){
 	
 	std::stringstream sstr(argv);
 	std::string  _line;
-
+	
 	while (getline(sstr,_line)){
 		boost::filesystem::path p(_line); 
 		std::string file = p.filename().string();
@@ -57,7 +57,7 @@ int _analyse(const char *argv){
 			analysator.data.push_back(e);
 		}
 		
-
+		
 		
 		//prepare outputfiles
 		
@@ -75,7 +75,7 @@ int _analyse(const char *argv){
 		analysator.start_find_peak();
 		analysator.start_find_inten();
 		analysator.start_find_peak_distance();
-
+		
 		
 		//write to outputfiles
 		f << name.c_str()<< std::endl; 
