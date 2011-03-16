@@ -45,7 +45,7 @@ int _analyse(const char *argv){
 		
 		
 		//parse data file
-		while(std::getline(in,line)){
+		while(getline(in,line)){
 			
 			
 			std::stringstream sstr(line);

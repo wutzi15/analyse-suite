@@ -6,3 +6,4 @@
 //  Copyright 2011 me. All rights reserved.
 //
 bool move_files(const char *new_path, const char* files);
+bool copy_files(const char *new_path, const char* files);

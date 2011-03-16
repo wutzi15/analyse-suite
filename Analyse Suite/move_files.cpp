@@ -14,6 +14,13 @@
 
 namespace fs= boost::filesystem ;
 
+void copy_file(const char *t_path,fs::path p ){
+	try {
+		fs::copy_file(p, fs::path(t_path)/p.filename(),fs::copy_option::none);
+	}catch(fs::filesystem_error &e){
+		std::cerr << e.what() << std::endl;
+	}
+}
 
 void move_file(const char *t_path,fs::path p ){
 	fs::rename(p, fs::path(t_path)/p.filename());
@@ -22,7 +29,7 @@ void move_file(const char *t_path,fs::path p ){
 bool move_files(const char *new_path, const char* files){
 	std::stringstream sstr(files);
 	std::vector<fs::path > f;
-	sstr << files;
+	//sstr << files;
 	std::string line;
 	
 	while (std::getline(sstr,line)) {
@@ -36,6 +43,30 @@ bool move_files(const char *new_path, const char* files){
 		move_file(new_path, dir/("_my_ana_"+name));
 		move_file(new_path, dir/("_peak_"+name));
 		move_file(new_path, dir/("_only_"+name));
+		move_file(new_path, dir/name);
+	}
+	
+	
+	return true;
+}
+bool copy_files(const char *new_path, const char* files){
+	std::stringstream sstr(files);
+	std::vector<fs::path > f;
+	//sstr << files;
+	std::string line;
+	
+	while (std::getline(sstr,line)) {
+		f.push_back(fs::path(line));
+	}
+	
+	for (std::vector<fs::path>::iterator i = f.begin(); i != f.end(); i++) {
+		fs::path dir = i->parent_path();
+		std::string name = i->filename().string();
+		copy_file(new_path, dir/("_dist_"+name));
+		copy_file(new_path, dir/("_my_ana_"+name));
+		copy_file(new_path, dir/("_peak_"+name));
+		copy_file(new_path, dir/("_only_"+name));
+		copy_file(new_path, dir/name);
 	}
 	
 	
