@@ -59,7 +59,7 @@ int _analyse(const char *argv){
 			e.lambda = a;
 			e.db = b;
 			analysator.data.push_back(e);
-			std::cout << a << b;
+			//std::cout << a << b;
 		}
 		
 		std::cout << name << std::endl;
@@ -80,11 +80,11 @@ int _analyse(const char *argv){
 		analysator.start_find_inten();
 		analysator.start_find_peak_distance();
 		
-		
-#ifdef DEBUG
-		analysator.print_peaks(boost::ref(std::cout));
-		analysator.print_distance(boost::ref(std::cout));
-#endif
+//		
+//#ifdef DEBUG
+//		analysator.print_peaks(boost::ref(std::cout));
+//		analysator.print_distance(boost::ref(std::cout));
+//#endif
 		
 		
 		//write to outputfiles

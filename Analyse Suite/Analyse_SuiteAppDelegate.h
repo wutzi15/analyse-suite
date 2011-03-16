@@ -19,6 +19,8 @@
 	NSTextField *tx_dir;
 	NSTextField *tx_files;
 	NSProgressIndicator *spin;
+	NSButton *ch_copy;
+	NSTextField *tx_download;
 }
 @property (assign) IBOutlet NSButton *ch_rec;
 @property (assign) IBOutlet NSButton *ch_plot;
@@ -29,6 +31,8 @@
 @property (assign) IBOutlet NSTextField *tx_dir;
 @property (assign) IBOutlet NSTextField *tx_files;
 @property (assign) IBOutlet NSProgressIndicator *spin;
+@property (assign) IBOutlet NSButton *ch_copy;
+@property (assign) IBOutlet NSTextField *tx_download;
 
 
 @property (assign) IBOutlet NSWindow *window;

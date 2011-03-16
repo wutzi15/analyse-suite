@@ -3,6 +3,7 @@
 
 #include <boost/bind.hpp>
 #include "analyse.h"
+#include <boost/thread.hpp>
 
 //defining minimum peak radius
 #define MIN_RADIUS 1
@@ -24,9 +25,9 @@ void analyser::print_distance(std::ostream &mystream){
   mystream << "Distrance between peaks\n";
   //mystream << peak_dis.size() << std::endl;
   for(size_t i = 0 ; i < peak_dis.size();i++){
-#ifdef DEBUG
-    std::cout << i ;
-#endif
+//#ifdef DEBUG
+//    std::cout << i ;
+//#endif
     mystream << peak_dis[i] << std::endl;
   }
 }
@@ -40,13 +41,13 @@ double analyser::get_lb(){
 
 void analyser::start_find_range(const double startwl, const double max){
   //launch multithreaded analysis
-	findup(startwl,max,boost::ref(upper_border));
-	finddown(startwl,max,boost::ref(lower_border));
-	/*
+	//findup(startwl,max,boost::ref(upper_border));
+	//finddown(startwl,max,boost::ref(lower_border));
+	
   boost::thread up(&analyser::findup,*this, startwl,max,boost::ref(upper_border));
   boost::thread down(&analyser::finddown, *this, startwl,max,boost::ref(lower_border));
   up.join();
-  down.join();*/
+  down.join();
 }
 
 
@@ -81,15 +82,15 @@ void analyser::start_find_peak(){
   // find single peaks "value bigger than surrounding values"
   try{
     for( unsigned int i = 1; i < data.size();i++){
-#ifdef DEBUG
+/*#ifdef DEBUG
       std::cout << " ---- \n";
-#endif
+#endif*/
       if(this->data[i].db > this->data[i-1].db)
 	//check surrounding values in the area of "MIN_RADIUS"
 	if(check_radius_up(MIN_RADIUS, i, 1) && check_radius_down(MIN_RADIUS, i ,1)){
-#ifdef DEBUG
+/*#ifdef DEBUG
 	  std::cout << "found peak at " << this->data[i].lambda << std::endl;
-#endif
+#endif*/
 	  peaks.push_back(this->data[i].lambda);
 	}
     }
@@ -107,16 +108,16 @@ bool analyser::check_radius_up(int max_depth, int start, int currdepth){
   if (currdepth > max_depth) return true;
   if (this->data[start].db >= this->data[start +1].db){
 
-#ifdef DEBUG  
-    std::cout << "u "<< this->data[start].db << " " << this->data[start+1].db <<" " << currdepth<<std::endl;
-#endif 
+//#ifdef DEBUG  
+//    std::cout << "u "<< this->data[start].db << " " << this->data[start+1].db <<" " << currdepth<<std::endl;
+//#endif 
 
     if (check_radius_up(max_depth, start+1, currdepth+1)) return true;
   }else{
 
-#ifdef DEBUG
-    std::cout << "u! "<< this->data[start].db << " " << this->data[start+1].db <<" " << currdepth<<std::endl;
-#endif 
+//#ifdef DEBUG
+//    std::cout << "u! "<< this->data[start].db << " " << this->data[start+1].db <<" " << currdepth<<std::endl;
+//#endif 
     
     return false;
   }
@@ -127,17 +128,17 @@ bool analyser::check_radius_down(int max_depth, int start, int currdepth){
   //recursivly check surroundung area to the left 
   if (currdepth > max_depth) return true;
   if (this->data[start].db >= this->data[start -1].db){
-
-#ifdef DEBUG
-    std::cout << "d "<< this->data[start].db << " " << this->data[start-1].db <<" " << currdepth<<std::endl;
-#endif 
+//
+//#ifdef DEBUG
+//    std::cout << "d "<< this->data[start].db << " " << this->data[start-1].db <<" " << currdepth<<std::endl;
+//#endif 
 
    if (check_radius_up(max_depth, start-1, currdepth+1)) return true;
   }else{
 
-#ifdef DEBUG
-    std::cout << "d! "<< this->data[start].db << " " << this->data[start-1].db <<" " << currdepth<<std::endl;
-#endif 
+//#ifdef DEBUG
+//    std::cout << "d! "<< this->data[start].db << " " << this->data[start-1].db <<" " << currdepth<<std::endl;
+//#endif 
 
    return false;
   }
@@ -182,10 +183,10 @@ double analyser::get_wl(double db){
 }
 
 void analyser::start_find_inten(){
-	find_inten(boost::ref(intensity));
-	/*
+	//find_inten(boost::ref(intensity));
+	
   boost::thread inten(&analyser::find_inten,*this,boost::ref(intensity));
-  inten.join();*/
+  inten.join();
 }
 
 void analyser::find_inten(double &area){
@@ -200,23 +201,23 @@ void analyser::find_inten(double &area){
       double tmp =  (x2-x1)*abs((y2-y1)/2);
       if(tmp > 0)
 	area += tmp;
-#ifdef DEBUG
-      std::cout << area <<std::endl;
-#endif
+//#ifdef DEBUG
+//      std::cout << area <<std::endl;
+//#endif
     }catch(std::exception err){
       std::cerr << err.what() <<std::endl;
     }
   }
     area *= area;
-#ifdef DEBUG
-    std::cout << "final area " << area << std::endl;
-#endif
+//#ifdef DEBUG
+//    std::cout << "final area " << area << std::endl;
+//#endif
 }
 
 void analyser::start_find_peak_distance(){
-#ifdef DEBUG
-  std::cout<< "in find distance\n";
-#endif
+//#ifdef DEBUG
+//  std::cout<< "in find distance\n";
+//#endif
 	find_peak_distance(boost::ref(peak_dis));
   /*
 	boost::thread dis(&analyser::find_peak_distance, *this,boost::ref(peak_dis));
@@ -226,9 +227,9 @@ void analyser::start_find_peak_distance(){
 void analyser::find_peak_distance(std::vector<double> &vec){
   for(size_t i = 0; i < peaks.size()-1;i++){
     double dis = peaks[i+1] - peaks[i];
-#ifdef DEBUG
-    std::cout << dis << std::endl;
-#endif
+//#ifdef DEBUG
+//    std::cout << dis << std::endl;
+//#endif
     vec.push_back(dis);
   }
 }

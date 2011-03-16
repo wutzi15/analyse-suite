@@ -26,6 +26,8 @@
 		98655EAF1330CE9E009675E2 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAD1330CE9E009675E2 /* libboost_filesystem.a */; };
 		98655EB01330CE9E009675E2 /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAE1330CE9E009675E2 /* libboost_system.a */; };
 		98655EB31330DB50009675E2 /* move_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98655EB11330DB50009675E2 /* move_files.cpp */; };
+		98655EB61330DDA2009675E2 /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EB51330DDA2009675E2 /* libboost_thread.a */; };
+		98655EB813313659009675E2 /* ftp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 98655EB713313658009675E2 /* ftp.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		98655EAE1330CE9E009675E2 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_system.a; sourceTree = "<group>"; };
 		98655EB11330DB50009675E2 /* move_files.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = move_files.cpp; sourceTree = "<group>"; };
 		98655EB21330DB50009675E2 /* move_files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = move_files.h; sourceTree = "<group>"; };
+		98655EB51330DDA2009675E2 /* libboost_thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_thread.a; sourceTree = "<group>"; };
+		98655EB713313658009675E2 /* ftp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ftp.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				9832222D132E2D9900EF98B5 /* Cocoa.framework in Frameworks */,
 				98655EAF1330CE9E009675E2 /* libboost_filesystem.a in Frameworks */,
 				98655EB01330CE9E009675E2 /* libboost_system.a in Frameworks */,
+				98655EB61330DDA2009675E2 /* libboost_thread.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +132,7 @@
 		9832222E132E2D9900EF98B5 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98655EB51330DDA2009675E2 /* libboost_thread.a */,
 				98655EAD1330CE9E009675E2 /* libboost_filesystem.a */,
 				98655EAE1330CE9E009675E2 /* libboost_system.a */,
 				9832222F132E2D9900EF98B5 /* AppKit.framework */,
@@ -145,6 +151,7 @@
 				9832223E132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.h */,
 				9832223F132E2D9900EF98B5 /* Analyse_SuiteAppDelegate.m */,
 				98322241132E2D9900EF98B5 /* MainMenu.xib */,
+				98655EB713313658009675E2 /* ftp.sh */,
 				981407B2132E7A9000FF8BF0 /* dist.sh */,
 				981407B4132E7BC600FF8BF0 /* plot.sh */,
 				98322233132E2D9900EF98B5 /* Supporting Files */,
@@ -291,6 +298,7 @@
 				98322243132E2D9900EF98B5 /* MainMenu.xib in Resources */,
 				981407B3132E7A9100FF8BF0 /* dist.sh in Resources */,
 				981407B5132E7BC600FF8BF0 /* plot.sh in Resources */,
+				98655EB813313659009675E2 /* ftp.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +444,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/wutzis_spam/Downloads/boost_1_46_0/stage/static,
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lboost_filesystem",
 					"-L/Users/wutzis_spam/Downloads/boost_1_46_0/stage/lib",
@@ -462,7 +473,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/;
 				INFOPLIST_FILE = "Analyse Suite/Analyse Suite-Info.plist";
-				LIBRARY_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/wutzis_spam/Downloads/boost_1_46_0/stage/static,
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lboost_filesystem",
 					"-L/Users/wutzis_spam/Downloads/boost_1_46_0/stage/lib",
