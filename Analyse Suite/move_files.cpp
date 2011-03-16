@@ -23,13 +23,16 @@ void copy_file(const char *t_path,fs::path p ){
 }
 
 void move_file(const char *t_path,fs::path p ){
+	try{
 	fs::rename(p, fs::path(t_path)/p.filename());
+	}catch(fs::filesystem_error &e){
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 bool move_files(const char *new_path, const char* files){
 	std::stringstream sstr(files);
 	std::vector<fs::path > f;
-	//sstr << files;
 	std::string line;
 	
 	while (std::getline(sstr,line)) {
@@ -43,7 +46,7 @@ bool move_files(const char *new_path, const char* files){
 		move_file(new_path, dir/("_my_ana_"+name));
 		move_file(new_path, dir/("_peak_"+name));
 		move_file(new_path, dir/("_only_"+name));
-		move_file(new_path, dir/name);
+		copy_file(new_path, dir/name);
 	}
 	
 	
@@ -52,7 +55,6 @@ bool move_files(const char *new_path, const char* files){
 bool copy_files(const char *new_path, const char* files){
 	std::stringstream sstr(files);
 	std::vector<fs::path > f;
-	//sstr << files;
 	std::string line;
 	
 	while (std::getline(sstr,line)) {

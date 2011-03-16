@@ -96,7 +96,7 @@
 		}
 	}
 	if (!([[tx_dir stringValue] isEqualToString:@""] ) && [ch_copy state] == NSOnState) {
-		copy_files([[tx_dir stringValue] UTF8String], [[tx_files stringValue] UTF8String]);
+		move_files([[tx_dir stringValue] UTF8String], [[tx_files stringValue] UTF8String]);
 	}
 	
 	NSFileManager *filemgr;
@@ -106,25 +106,23 @@
 	
 	currentpath = [filemgr currentDirectoryPath];
 	
-	NSLog (@"Current directory is %@", currentpath);
 	
 	if ([filemgr changeCurrentDirectoryPath: [tx_dir stringValue]] == NO)
         NSLog (@"Cannot change directory.");
 	
 	currentpath = [filemgr currentDirectoryPath];
 	
-	NSLog (@"Current directory is %@", currentpath);
-	
 	if ([ch_plot state] ==NSOnState) {
+		copy_files([[tx_dir stringValue] UTF8String], [[tx_files stringValue] UTF8String]);
 		NSTask *task = [[NSTask alloc] init];
 		[task setLaunchPath:@"/bin/sh"];
 		[task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"plot" ofType:@"sh"], nil]];
 		[task launch];
+		[task waitUntilExit];
 	}
 	
 	
 	[spin stopAnimation:self];
-	//}
 }
 
 - (IBAction)bt_load_ftp:(id)sender {
@@ -152,9 +150,19 @@
         unsigned long int count = [filesToOpen count];
         for (int i=0; i<count; i++) {
             [tx_dir setStringValue:[filesToOpen objectAtIndex:i]];
-            //id currentDoc = [[ToDoDoc alloc] initWithFile:aFile];
         }
     }
 	
+}
+
+- (IBAction)clear_input_files:(id)sender {
+	[tx_files setStringValue:@""];
+}
+
+- (IBAction)clear_all:(id)sender {
+	[tx_files setStringValue:@""];
+	[tx_dir setStringValue:@""];
+	[tx_download setStringValue:@""];
+	[tx_ftp setStringValue:@""];
 }
 @end

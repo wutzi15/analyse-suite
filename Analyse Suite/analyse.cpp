@@ -21,19 +21,15 @@ int _analyse(const char *argv){
 	
 	std::stringstream sstr(argv);
 	std::string  _line;
-	
+
 	while (getline(sstr,_line)){
 		boost::filesystem::path p(_line); 
-		//std::cout << p.string() << std::endl; 
 		std::string file = p.filename().string();
 		std::string path = p.parent_path().string();
 		_of = path+ "/_my_ana_" +file;
 		_only = path+ "/_only_" +file;
 		_peaks = path +"/_peak_" + file;
 		_dist = path + "/_dist_" + file;
-		//std::cout << p.file_string() << std::endl; 
-		//std::cout << p.directory_string() << std::endl; 
-		std::cout << _line << std::endl;
 		analyser analysator; 
 		//get file to read
 		std::string name = _line;
@@ -59,12 +55,12 @@ int _analyse(const char *argv){
 			e.lambda = a;
 			e.db = b;
 			analysator.data.push_back(e);
-			//std::cout << a << b;
 		}
 		
-		std::cout << name << std::endl;
+
 		
 		//prepare outputfiles
+		
 		std::string of = _of;
 		std::string only = _only;
 		std::string peaks = _peaks;
@@ -79,13 +75,7 @@ int _analyse(const char *argv){
 		analysator.start_find_peak();
 		analysator.start_find_inten();
 		analysator.start_find_peak_distance();
-		
-//		
-//#ifdef DEBUG
-//		analysator.print_peaks(boost::ref(std::cout));
-//		analysator.print_distance(boost::ref(std::cout));
-//#endif
-		
+
 		
 		//write to outputfiles
 		f << name.c_str()<< std::endl; 

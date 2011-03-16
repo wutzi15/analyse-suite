@@ -21,7 +21,7 @@ int rec(const char *argv){
 	std::string  _line;
 	
 	while (getline(sstr,_line)){
-		std::cout << _line << std::endl;
+		//std::cout << _line << std::endl;
 	
 	//old code
 	

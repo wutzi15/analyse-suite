@@ -23,6 +23,7 @@
 		98322255132E2D9900EF98B5 /* Analyse_SuiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */; };
 		98322257132E2D9900EF98B5 /* Analyse_SuiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */; };
 		98322261132E36E500EF98B5 /* rec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98322260132E36E500EF98B5 /* rec.cpp */; };
+		9846BA931331596B007974E0 /* ana_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9846BA921331596B007974E0 /* ana_icon.icns */; };
 		98655EAF1330CE9E009675E2 /* libboost_filesystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAD1330CE9E009675E2 /* libboost_filesystem.a */; };
 		98655EB01330CE9E009675E2 /* libboost_system.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98655EAE1330CE9E009675E2 /* libboost_system.a */; };
 		98655EB31330DB50009675E2 /* move_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98655EB11330DB50009675E2 /* move_files.cpp */; };
@@ -70,6 +71,7 @@
 		98322254132E2D9900EF98B5 /* Analyse_SuiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Analyse_SuiteTests.h; sourceTree = "<group>"; };
 		98322256132E2D9900EF98B5 /* Analyse_SuiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Analyse_SuiteTests.m; sourceTree = "<group>"; };
 		98322260132E36E500EF98B5 /* rec.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rec.cpp; sourceTree = "<group>"; };
+		9846BA921331596B007974E0 /* ana_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ana_icon.icns; sourceTree = "<group>"; };
 		98655EAD1330CE9E009675E2 /* libboost_filesystem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_filesystem.a; sourceTree = "<group>"; };
 		98655EAE1330CE9E009675E2 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libboost_system.a; sourceTree = "<group>"; };
 		98655EB11330DB50009675E2 /* move_files.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = move_files.cpp; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		98322233132E2D9900EF98B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9846BA921331596B007974E0 /* ana_icon.icns */,
 				98322234132E2D9900EF98B5 /* Analyse Suite-Info.plist */,
 				98322235132E2D9900EF98B5 /* InfoPlist.strings */,
 				98322238132E2D9900EF98B5 /* Analyse Suite-Prefix.pch */,
@@ -299,6 +302,7 @@
 				981407B3132E7A9100FF8BF0 /* dist.sh in Resources */,
 				981407B5132E7BC600FF8BF0 /* plot.sh in Resources */,
 				98655EB813313659009675E2 /* ftp.sh in Resources */,
+				9846BA931331596B007974E0 /* ana_icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +443,7 @@
 				FRAMEWORK_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -468,6 +473,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = /Users/wutzis_spam/Downloads/boost_1_46_0/stage/static;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Analyse Suite/Analyse Suite-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

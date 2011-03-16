@@ -53,20 +53,25 @@ void analyser::start_find_range(const double startwl, const double max){
 
 
 void analyser::findup(const double startwl, const double max, double &myret){
-  //find the last value bigger than "maximum peak -30 dB"
-  this->data.begin();
-  for(int i = (int)data.size() ; i >= 0;i--){
-    if(this->data[i].lambda > startwl){
-      if(this->data[i].db >= (max-30)) {
-	  myret = this->data[i+1].lambda;
-	  return;
+	//find the last value bigger than "maximum peak -30 dB"
+	try{
+		this->data.begin();
+		for(int i = (int)data.size() ; i >= 0;i--){
+			if(this->data[i].lambda > startwl){
+				if(this->data[i].db >= (max-30)) {
+					myret = this->data[i+1].lambda;
+					return;
+				}
+			}
+		}
+	}catch(std::runtime_error &e){
+		std::cerr << e.what() << std::endl;
 	}
-      }
-  }
 }
 
 void analyser::finddown(const double startwl, const double max,double &ret){
   //find the first value bigger than "maximum peak -30 dB"
+	try{
   this->data.begin();
   for(int i = 1; i<(int)data.size();i++){
     if(this->data[i].lambda <= startwl){
@@ -76,6 +81,9 @@ void analyser::finddown(const double startwl, const double max,double &ret){
       }
     }
   }
+	}catch(std::runtime_error &e){
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 void analyser::start_find_peak(){

@@ -39,5 +39,7 @@
 - (IBAction)bt_analyse:(id)sender;
 - (IBAction)bt_load_ftp:(id)sender;
 - (IBAction)bt_path:(id)sender;
+- (IBAction)clear_input_files:(id)sender;
+- (IBAction)clear_all:(id)sender;
 
 @end
